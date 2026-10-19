@@ -1,0 +1,44 @@
+@import "tailwindcss";
+//random
+html,
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --background: #fff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  .nav-item {
+    @apply px-4 py-1.5 rounded-full text-black/70 text-sm font-semibold hover:bg-black/10 hover:text-black transition duration-300;
+  }
+
+  .foot-item {
+    @apply text-slate-300 hover:text-emerald-400 transition-colors duration-300 text-sm;
+  }
+
+  .title-page {
+    @apply bg-gradient-to-r from-rose-600 to-green-600 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .hero-ring {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-blue-900 -z-10;
+  }
+}
+
+@layer contact {
+  .form {
+    @apply block w-full rounded-lg bg-white border-gray-300 pl-10 py-3 focus:border-emerald-500 focus:ring-emerald-500;
+  }
+}
